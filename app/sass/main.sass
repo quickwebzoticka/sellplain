@@ -6,6 +6,12 @@
 	padding: 0
 	margin: 0
 	box-sizing: border-box
+	&:focus
+		outline: none
+	&:visited
+		outline: none
+	&:hover
+		outline: none
 
 .wrapper
 	overflow: hidden
@@ -16,4 +22,524 @@ body
 .container
 	max-width: 1180px
 	margin: 0 auto
+	padding: 0 15px
+
+.header
+	position: absolute
+	z-index: 100
+	top: 0
+	left: 0
+	width: 100%
+
+.block-wrapper
+	display: flex
+	justify-content: space-between
+	padding: 22px 0
+	align-items: center
+
+.block-wrapper_align-start
+	align-items: flex-start
+
+.logo
+	img
+		width: 100%
+	@include tablet
+		width: 64px
+		a
+			display: flex
+			justify-content: center
+			align-items: center
+
+
+.nav-block
+	display: flex
+	justify-content: space-between
+	@include tablet
+		display: none
+		flex-direction: column
+		width: 100vw
+		z-index: 10
+		background: #f6f9fd
+		padding-top: 40px
+		position: absolute
+		top: 0
+		left: 0
+		align-items: stretch
+		justify-content: flex-start
+
+
+.nav-block__item
+	display: flex
+	justify-content: space-between
+	margin: 0 24px
+	&:first-child
+		margin: 0 24px 0 0
+	&:last-child
+		margin: 0 0 0 24px
+		@include tablet
+			flex-direction: row-reverse
+	@include tablet
+		margin: 0 !important
+		border-bottom: 1px solid $head-color
+	a
+		font-family: 'Montserrat'
+		font-size: 16px
+		color: #6B8CAE
+		text-decoration: none
+		@include tablet
+			padding: 10px 15px
+			display: block
+			width: 100%
+
+.nav-block__item_mr
+	margin: 0 20px 0 0 !important
+
+.language
+	margin-right: 10px
+	width: 26px
+	height: 25px
+	background: url(../img/Path.png) no-repeat center center
+	display: flex
+	align-items: center
+	justify-content: center
+	color: #FFF
+	font-size: 13px
+	padding: 0 0 3px 0
+	@include tablet
+		display: none
+
+.language-name
+	position: relative
+	&:after
+		content: ''
+		display: block
+		position: absolute
+		right: -20px
+		top: 4px
+		width: 5px
+		height: 5px
+		border-right: 2px solid $regular-color
+		border-bottom: 2px solid $regular-color
+		transform: rotate(45deg) translate(0,0)
+		transition: 0.3s ease
+		@include tablet
+			right: 20px
+			top: 15px
+
+.language-name.active:after
+	transform: rotate(-135deg) translateY(-2px)
+
+.language-list
+	position: absolute
+	top: 100%
+	left: 0
+	display: none
+	@include tablet
+		background: #f6f9fd
+		width: 100%
+
+.language-list__item
+	@include tablet
+		padding: 5px 15px
+
+.nav-block__burger
+	display: none
+	width: 24px
+	height: 24px 
+	cursor: pointer
+	position: relative
+	z-index: 1000
+	@include tablet
+		display: flex
+		align-items: center
+		justify-content: center
+
+.nav-block__burger.active
+	.burger__line
+		height: 0px
+		&:after
+			top: -1px
+			transform: rotate(45deg)
+		&:before
+			bottom: -1px
+			transform: rotate(-45deg)
+
+.burger__line
+	width: 100%
+	height: 2px
+	background-color: $head-color
+	border-radius: 2px
+	display: inline-block
+	position: relative
+	&:before, &:after
+		content: ''
+		display: block
+		position: absolute
+		width: 100%
+		height: 2px
+		background-color: $head-color
+		border-radius: 2px
+		top: -7px
+		transition: 0.3s ease
+	&:before
+		top: unset
+		bottom: -7px
+		transition: 0.3s ease
+
+.first-screen
+	position: relative
+	padding-top: 190px
+	height: 100vh
+	background: url(../img/header-back.svg) no-repeat
+	@include tablet
+		height: auto
+		background-size: 150%
+
+.first-screen_flex-wrapper
+	display: flex
+	flex-direction: column
+	justify-content: space-between
+	height: 100%
+
+.text-block
+	flex: 0 1 570px
+	position: relative
+	z-index: 5
+	@include tablet
+		flex: 0 1
+
+.text-block__head
+	font-family: 'Poppins', sans-serif
+	font-style: normal
+	line-height: 59px
+	font-size: 44px
+	color: $head-color
+	@include tablet
+		font-size: 33px
+
+.text-block__head_bolded
+	font-weight: 600
+	font-family: 'Poppins Bold'
+
+.text-block__main
+	font-family: Poppins
+	font-style: normal
+	line-height: 28px
+	font-size: 18px
+	color: $regular-color
+	margin: 20px 0 30px
+
+.first-screen
+	@include tablet
+		padding-top: 50px
+	.text-block__main
+		@include desctop
+			max-width: 400px
+		@include tablet
+			max-width: 100%
+	.block-wrapper
+		@include tablet
+			.img-block
+				width: 100%
+			.text-block
+				align-items: center
+				display: flex
+				justify-content: center
+				flex-direction: column
+				text-align: center
+			img
+				width: 100%
+		@include tablet
+			flex-direction: column-reverse
+	.block-bottom-wrapper
+
+
+.main-btn
+	background: $blue-color
+	box-shadow: 0px 10px 50px rgba(7, 42, 68, 0.12)
+	border-radius: 8px
+	width: 200px
+	height: 60px
+	border: none
+	color: #FFF
+	text-transform: uppercase
+
+.bold
+	font-weight: bold
+
+.img-block_float-right
+	position: absolute
+	right: 0
+	z-index: 1
+	@include tablet
+		position: static
+
+.block-bottom-wrapper
+	align-self: flex-end
+	display: flex
+	width: 100%
+	justify-content: space-between
+	align-items: flex-start
+	padding-bottom: 20px
+	border-bottom: 1px solid #CBE3FA
+	@include tablet
+		padding-bottom: 0px
+		padding-top: 20px
+		border-bottom: none
+		border-top: 1px solid #CBE3FA
+
+.block-bottom-wrapper__item
+	align-items: center
+	display: flex
+	@include tablet
+		transform: scale(0.7)
+		img
+			width: 100%
+
+.second-screen
+	padding-top: 172px
+	position: relative
+	padding-bottom: 204px
+	@include tablet
+		padding-top: 72px
+		padding-bottom: 104px
+		.block-wrapper
+			flex-direction: column
+			text-align: center
+			.img-block
+				width: 100%
+				img
+					width: 100%
+
+.third-screen
+	padding-bottom: 380px
+	background: url(../img/back-2s-1.svg) no-repeat right center
+	@include tablet
+		text-align: center
+		padding-bottom: 80px
+		.block-row
+			flex-direction: column
+			.img-block
+				display: none
+			.block-text__line
+				display: none
+
+
+.block-wrapper_column
+	flex-direction: column
+
+.block-row
+	display: flex
+	justify-content: flex-end
+	z-index: 2
+	position: relative
+	.img-block
+		position: absolute
+		transform: translate(10%, -20%)
+		left: -600px
+	.text-block__line
+		border-bottom: 2px dashed #CBE3FA
+		position: absolute
+		height: 1px
+		width: 261px
+		top: 30px
+		right: calc(100% + 20px)
+	&:nth-child(2)
+		z-index: 3
+		.img-block
+			transform: translate(70%, -40%)
+		.text-block__line
+			width: 70px
+	&:nth-child(3)
+		z-index: 4
+		.img-block
+			transform: translate(30%, -60%)
+		.text-block__line
+			width: 200px
+
+.block-benefits
+	padding-top: 280px
+	@include tablet
+		padding-top: 40px
+		.block-wrapper
+			flex-direction: column
+.text-block_center
+	text-align: center
+
+.block-wrapper_top
+	align-items: flex-start
+
+.block-item_center
+	align-items: center
+	justify-content: center
+	display: flex
+	flex-direction: column
+	flex: 0 1 330px
+	text-align: center
+
+.block-item_arrow
+	position: relative
+	&:after
+		content: ''
+		background: url(../img/arrow.png) no-repeat center center
+		width: 62px
+		height: 16px
+		position: absolute
+		top: 35px
+		left: calc(100% + 20px)
+	@include tablet
+		&:after
+			top: unset
+			bottom: 0px
+			left: calc(50% - 8px)
+			transform: rotate(90deg) translateY(100%)
+
+.block-item__head_blue
+	color: $blue-color
+	width: 330px
+	height: 80px
+	font-size: 36px
+	display: flex
+	align-items: center
+	justify-content: center
+	background: #FFFFFF
+	box-shadow: 0px 4px 15px rgba(7, 42, 68, 0.1)
+	border-radius: 10px
+	margin-bottom: 20px
+	@include tablet
+		width: 100%
+
+.block-item__main
+	color: $regular-color
+	line-height: 30px
+	font-size: 18px
+
+.table
+	background: #FFF
+	box-shadow: 0px 4px 15px rgba(7, 42, 68, 0.1)
+	border-radius: 10px
+	width: 745px
+	margin: 0 auto 160px
+	@include tablet
+		width: 100%
+		margin: 0 auto 64px
+
+.table__head
+	display: flex
+	justify-content: space-between
+	align-items: center
+	color: $blue-color
+	font-size: 36px
+	border-bottom: 2px dashed #CBE3FA
+
+.table__column
+	flex: 1
+	display: flex
+	align-items: center
+	justify-content: center
+	flex-direction: column
+
+.table__column_line
+	border-right: 2px dashed #CBE3FA
+
+.table__column_p
+	padding: 32px 0
+
+.table__main
+	display: flex
+	padding: 24px 0
+
+.table__item
+	margin-bottom: 24px
+	&:last-child
+		margin-bottom: 0px
+
+.fourth-screen
+	position: relative
+
+.background-figure-1,
+.background-figure-2,
+.background-figure-3,
+.background-figure-4
+	position: absolute
+	top: 0
+	z-index: -1
+
+.background-figure-1
+	top: -10%
+
+.background-figure-2
+	top: 20%
+	right: 0
+
+.background-figure-3
+	top: 60%
+	left: 0
+
+.background-figure-4
+	top: 70%
+	right: 0
+
+.background-figure-2,
+.background-figure-3
+	@include tablet
+		display: none
+
+.fifth-screen
+	padding-bottom: 160px
+	@include tablet
+		padding-bottom: 60px
+
+.text-head
+	font-size: 44px
+	color: $head-color
+	margin-bottom: 40px
+.text-head_center
+	text-align: center
+
+.text-block__head_width
+	max-width: 570px
+	display: inline-block
+
+.footer
+	padding-top: 30px
+	padding-bottom: 165px
+	@include tablet
+		padding-bottom: 10px
+		.nav-block__item
+			display: none
+		.block__item:nth-child(2), .list-item:first-child
+			display: none
+		.block__item
+			display: flex
+			justify-content: space-between
+			padding-top: 20px
+
+
+.container_border-top
+	border-top: 2px solid #CBE3FA
+
+.block-segment
+	display: flex
+	flex: 0 1 60%
+	justify-content: space-between
+	@include tablet
+		flex: 1
+		flex-direction: column
+
+.list-item
+	margin-bottom: 15px
+.list-item__a
+	color: #7887A7
+	font-size: 16px
+	text-decoration: none
+.list-item__a-flex
+	display: flex
+	align-items: center
+	color: $head-color
+	text-decoration: none
+	@include tablet
+		font-size: 14px
+.list-item__img
+		margin-right: 10px
 
