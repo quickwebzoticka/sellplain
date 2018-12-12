@@ -105,11 +105,13 @@ body
 	color: #FFF
 	font-size: 13px
 	padding: 0 0 3px 0
+	text-transform: uppercase
 	@include tablet
 		display: none
 
 .language-name
 	position: relative
+	width: 66px
 	&:after
 		content: ''
 		display: block
@@ -319,9 +321,14 @@ body
 		padding-bottom: 80px
 		.block-row
 			flex-direction: column
+			align-items: center
+			.text-block
+				width: 50%
+				@include mob
+					width: 100%
 			.img-block
 				display: none
-			.block-text__line
+			.text-block__line
 				display: none
 
 
@@ -333,6 +340,7 @@ body
 	justify-content: flex-end
 	z-index: 2
 	position: relative
+	width: 100%
 	.img-block
 		position: absolute
 		transform: translate(10%, -20%)
@@ -363,6 +371,10 @@ body
 		padding-top: 40px
 		.block-wrapper
 			flex-direction: column
+		.block-item__main
+			width: 50%
+			@include mob
+				width: 100%
 .text-block_center
 	text-align: center
 
@@ -386,7 +398,7 @@ body
 		height: 16px
 		position: absolute
 		top: 35px
-		left: calc(100% + 20px)
+		left: calc(100% + 10px)
 	@include tablet
 		&:after
 			top: unset
@@ -406,7 +418,7 @@ body
 	box-shadow: 0px 4px 15px rgba(7, 42, 68, 0.1)
 	border-radius: 10px
 	margin-bottom: 20px
-	@include tablet
+	@include mob
 		width: 100%
 
 .block-item__main

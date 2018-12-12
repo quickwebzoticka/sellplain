@@ -1,5 +1,9 @@
 $(document).ready(function() {
 
+		AOS.init({
+			once: true
+		});
+
 		function resizeImg() {
 			let width = $(window).width();
 			console.log(width);
@@ -30,4 +34,12 @@ $(document).ready(function() {
 			$(this).toggleClass('active');
 			$(this).siblings('.nav-block').slideToggle(300);
 		});
+
+		$(document).on('click', '.language-list__item', function(){
+			let a = $(this).html();
+
+			$(this).closest('.language-name').find('span').html(a);
+			a = a.split('',2).join('');
+			$(this).closest('.language-name').siblings('.language').html(a);
+		});	
 });

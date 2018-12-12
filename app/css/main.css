@@ -206,13 +206,15 @@ body {
           justify-content: center;
   color: #FFF;
   font-size: 13px;
-  padding: 0 0 3px 0; }
+  padding: 0 0 3px 0;
+  text-transform: uppercase; }
   @media screen and (max-width: 1024px) {
     .language {
       display: none; } }
 
 .language-name {
-  position: relative; }
+  position: relative;
+  width: 66px; }
   .language-name:after {
     content: '';
     display: block;
@@ -522,10 +524,20 @@ body {
         -webkit-box-direction: normal;
         -webkit-flex-direction: column;
             -ms-flex-direction: column;
-                flex-direction: column; }
+                flex-direction: column;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+            -ms-flex-align: center;
+                align-items: center; }
+        .third-screen .block-row .text-block {
+          width: 50%; } }
+      @media screen and (max-width: 1024px) and (max-width: 768px) {
+        .third-screen .block-row .text-block {
+          width: 100%; } }
+  @media screen and (max-width: 1024px) {
         .third-screen .block-row .img-block {
           display: none; }
-        .third-screen .block-row .block-text__line {
+        .third-screen .block-row .text-block__line {
           display: none; } }
 
 .block-wrapper_column {
@@ -545,7 +557,8 @@ body {
       -ms-flex-pack: end;
           justify-content: flex-end;
   z-index: 2;
-  position: relative; }
+  position: relative;
+  width: 100%; }
   .block-row .img-block {
     position: absolute;
     -webkit-transform: translate(10%, -20%);
@@ -587,7 +600,12 @@ body {
         -webkit-box-direction: normal;
         -webkit-flex-direction: column;
             -ms-flex-direction: column;
-                flex-direction: column; } }
+                flex-direction: column; }
+      .block-benefits .block-item__main {
+        width: 50%; } }
+    @media screen and (max-width: 1024px) and (max-width: 768px) {
+      .block-benefits .block-item__main {
+        width: 100%; } }
 
 .text-block_center {
   text-align: center; }
@@ -631,8 +649,8 @@ body {
     height: 16px;
     position: absolute;
     top: 35px;
-    left: -webkit-calc(100% + 20px);
-    left: calc(100% + 20px); }
+    left: -webkit-calc(100% + 10px);
+    left: calc(100% + 10px); }
   @media screen and (max-width: 1024px) {
     .block-item_arrow:after {
       top: unset;
@@ -666,7 +684,7 @@ body {
   -webkit-border-radius: 10px;
           border-radius: 10px;
   margin-bottom: 20px; }
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 768px) {
     .block-item__head_blue {
       width: 100%; } }
 
