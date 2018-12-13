@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<meta content="width=device-width, initial-scale=1" name="viewport">
 	<title>SellPlain</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/aos.css">
 	<link rel="stylesheet" href="css/main.css">
 </head>
@@ -56,7 +57,7 @@
 					<div class="text-block" data-aos="fade-right">
 						<div class="text-block__head text-block__head_bolded">Become A Multichannel Superseller</div>
 						<div class="text-block__main"><span class="bold">Sellplain</span> is a product feed automation tool. Seamlessly integrating your business with top marketplaces and reaching millions.</div>
-						<div class="text-block__bottom"><button class="main-btn">START FREE TRIAL</button></div>
+						<div class="text-block__bottom"><button class="main-btn"  data-toggle="modal" data-target="#modal">START FREE TRIAL</button></div>
 					</div>
 					<div class="img-block img-block_float-right header-img" data-aos="fade-left">
 						<img src="img/header-img.svg" alt="header-img">
@@ -229,7 +230,7 @@
 				<div class="text-block text-block_center" data-aos="fade-up">
 					<div class="text-block__head text-block__head_bolded text-block__head_width">Fasten Your Seat-Belt And Put Your Helmet On</div>
 					<div class="text-block__main">It is simple to get Skyrocket Sales.</div>
-					<div class="text-block__bottom"><button class="main-btn">START FREE TRIAL</button></div>
+					<div class="text-block__bottom"><button class="main-btn" data-toggle="modal" data-target="#modal">START FREE TRIAL</button></div>
 				</div>
 			</div>
 		</div>
@@ -272,8 +273,56 @@
 		</footer>
 	</div>
 
+	<div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	  <div class="modal-dialog modal-dialog-centered" role="document">
+	    <div class="modal-content">
+	      <div class="modal-body">
+			<div class="modal-title">
+				Start Free Trial
+			</div>
+			<div class="modal-form">
+				<form action="">
+					<label class="modal-block">
+						
+						<input type="text" class="modal-block__input">
+						<span class="modal-block__placeholder">Name</span>
+					</label>
+					<label class="modal-block">
+						
+						<input type="text" class="modal-block__input">
+						<span class="modal-block__placeholder">Email</span>
+					</label>
+					<label class="modal-block">
+						
+						<input type="password" class="modal-block__input">
+						<span class="modal-block__placeholder">Password</span>
+						<div class="modal-block__description">
+							At least 6 characters
+						</div>
+					</label>
+					<label class="modal-block">
+						
+						<input type="password" class="modal-block__input">
+						<span class="modal-block__placeholder">Repeat Password</span>
+					</label>
+					<label class="modal-block modal-block_flexbox">
+						<input type="checkbox" class="modal-block__checkbox">
+						<div class="modal-block__checkbox-avatar"></div>
+						<div class="modal-block__text">I Agree to the Terms and Conditions</div>
+					</label>
+					<div class="modal-block">
+						<button class="main-btn main-btn_wide disabled" disabled>START FREE TRIAL</button>	 
+					</div>
+				</form>
+			</div>	
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
 	
 	<script src="js/libs.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
 	<script src="js/aos.js"></script>
 	<script src="js/myscripts.js"></script>
 </body>
