@@ -98,6 +98,18 @@ $(document).ready(function() {
 		  }
 		});
 		
+		$(document).on('click', '.text-head-description', function(){
 
+			let text = $('.text-head-description').text();
+
+			$(document).find('.table').slideToggle(400)
+			$('.text-head-description').toggleClass('active');
+
+			if (text == 'Show pricing sheet') {
+				$('.text-head-description').text('Hide pricing sheet');
+			} else {
+				$('.text-head-description').text('Show pricing sheet');
+			}
+		});
 
 });
